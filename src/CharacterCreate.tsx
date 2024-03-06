@@ -24,6 +24,8 @@ function CharacterCreate() {
         setForm(newValues);
     }
 
+    const [createdCharacter, setCreatedCharacter] = useState<FormInputType | null>(null);
+
 
     return (
         <div>
@@ -41,6 +43,7 @@ function CharacterCreate() {
             <form onSubmit={(event) => {
               event.preventDefault();
               console.log(form)
+                setCreatedCharacter(form);
             }}>
                 <div>
                     <label>Name:
@@ -75,7 +78,21 @@ function CharacterCreate() {
                 </div>
                     <input type="submit" value="Save" />
             </form>
+
+            {createdCharacter && (
+                <div>
+                    <p>Your Character:</p>
+                    <ul>
+                        <li>Name: {createdCharacter.name}</li>
+                        <li>Alive: {createdCharacter.isAlive ? "Yes" : "No"}</li>
+                        <li>Species: {createdCharacter.species}</li>
+                        <li>Type: {createdCharacter.type}</li>
+                    </ul>
+                </div>
+            )}
+
         </div>
+
     )
 }
 

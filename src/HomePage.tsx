@@ -19,9 +19,16 @@ function HomePage() {
                 <div>
                 <Link to="/character/cards">
                     <button className="buttons">
-                        <span className="text">Click here to get your random character!</span>
+                        <span className="text">Click here to get your random character card!</span>
                     </button>
                 </Link>
+                </div>
+                <div>
+                    <Link to="/character/create">
+                        <button className="buttons">
+                            <span className="text">Click here to create your own Rick and Morty character!</span>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </>
